@@ -4,14 +4,13 @@ import {useState} from "react";
 function Age () {
     const  [userName, setUserName] = useState("");
     const [age, setAge] = useState("");
-    const [country, setCountry] = useState("");
+    const [country, setCountry] = useState("FR");
     const url = `https://api.agify.io?name=${userName}&country_id=${country}`;
     function handleClick(e) {
         e.preventDefault();
         fetch(url)
         .then((response) => response.json())
         .then((data) => setAge(data.age));
-    
     };
 
 return (
@@ -43,4 +42,4 @@ return (
 );
 }
 
-export default Age
+export default Age;
